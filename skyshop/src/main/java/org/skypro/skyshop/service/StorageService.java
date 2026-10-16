@@ -9,6 +9,8 @@ import org.skypro.skyshop.model.search.Searchable;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
+import java.util.UUID;
+import java.util.Optional;
 
 @Service
 public class StorageService {
@@ -35,6 +37,9 @@ public class StorageService {
         allItems.addAll(productStorage.values());
         allItems.addAll(articleStorage.values());
         return allItems;
+    }
+    public Optional<Product>getProductByld(UUID id){
+        return Optional.ofNullable(productStorage.get(id));
     }
 
     private void initData() {
