@@ -37,6 +37,10 @@ public class StorageService {
         return allItems;
     }
 
+    public Optional<Product>getProductById(UUID id){
+        return Optional.ofNullable(productStorage.get(id));
+    }
+
     private void initData() {
 
         UUID breadId = UUID.randomUUID();
